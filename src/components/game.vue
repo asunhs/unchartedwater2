@@ -365,7 +365,7 @@ export default Vue.extend({
     const db = this.$database = await createIdbFileSystem(this.mod, 1)
     const { fs, main } = await createDos(canvas)
 
-    await fs.extract(`/static/${this.mod}.zip`)
+    await fs.extract(`static/${this.mod}.zip`)
 
     const saveFileBody = await db.load<Uint8Array>(this.save)
     if (saveFileBody) {
